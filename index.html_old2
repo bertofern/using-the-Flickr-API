@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="IOC viatges - Start Bootstrap Template">
+    <meta name="author" content="https://bertofern.wordpress.com/">
+    <link rel="icon" type="image/png" href="img/ioc32px.png" />
+
+    <title>IOC viatges - Start Bootstrap Template</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet"
+        type="text/css">
+    <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/stylish-portfolio.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+    <!-- Navigation -->
+    <a class="menu-toggle rounded" href="#">
+        <i class="fas fa-bars"></i>
+    </a>
+    <nav id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+                <a class="js-scroll-trigger" href="#page-top">IOC viatges</a>
+            </li>
+            <li class="sidebar-nav-item">
+                <a class="js-scroll-trigger" href="#page-top">Inici</a>
+            </li>
+            <li class="sidebar-nav-item">
+                <a class="js-scroll-trigger" href="#about">About</a>
+            </li>
+            <li class="sidebar-nav-item">
+                <a class="js-scroll-trigger" href="#services">Serveis</a>
+            </li>
+            <li class="sidebar-nav-item">
+                <a class="js-scroll-trigger" href="#portfolio">Ofertes</a>
+            </li>
+            <li class="sidebar-nav-item">
+                <a class="js-scroll-trigger" href="#contact">On som</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header class="masthead d-flex" style="background-image:url('img/nyc.jpg') !important;">
+        <div class="container text-center my-auto">
+            <h1 class="mb-1">IOC Viatges</h1>
+            <h3 class="mb-5">
+                <em>Viatja a les principals ciutats del món</em>
+            </h3>
+            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Descobrir més</a>
+        </div>
+        <div class="overlay"></div>
+    </header>
+
+    <!-- About -->
+    <section class="content-section bg-light" id="about">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <h1>Organitzem i planifiquem les teves vacances</h1>
+                    <p class="lead mb-5">No perdis l’oportunitat!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="content-section bg-primary text-white text-center" id="services">
+        <div class="container">
+            <div class="content-section-heading">
+                <h2 class="mb-0">Els nostres serveis</h2>
+                <hr width="25%" style="border: 1px solid white;">
+                <br>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+                    <span class="service-icon rounded-circle mx-auto mb-3">
+                        <i class="fa fa-plane"></i>
+                    </span>
+                    <h4>
+                        <strong>Vols</strong>
+                    </h4>
+                    <p class="text-faded mb-0">Les millors companyies d’aviació als millors preus.</p><br>
+                    <a href="#" class="btn btn-xl btn-light mr-4 mx-auto">Més informació!</a>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+                    <span class="service-icon rounded-circle mx-auto mb-3">
+                        <i class="fa fa-home"></i>
+                    </span>
+                    <h4>
+                        <strong>Hotels</strong>
+                    </h4>
+                    <p class="text-faded mb-0">Allotjaments de primera qualitat adequats a les vostres necessitats.</p><br>
+                    <a href="#" class="btn btn-xl btn-light mr-4 mx-auto">Més informació!</a>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
+                    <span class="service-icon rounded-circle mx-auto mb-3">
+                        <i class="fa fa-car"></i>
+                    </span>
+                    <h4>
+                        <strong>Cotxes</strong>
+                    </h4>
+                    <p class="text-faded mb-0">Mou-te en cotxe per a una millor comoditat.</p><br>
+                    <a href="#" class="btn btn-xl btn-light mr-4 mx-auto">Més informació!</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <span class="service-icon rounded-circle mx-auto mb-3">
+                        <i class="fa fa-heart"></i>
+                    </span>
+                    <h4>
+                        <strong>Cultura</strong>
+                    </h4>
+                    <p class="text-faded mb-0">T’informem dels millors llocs per visitar.</p><br>
+                    <a href="#" class="btn btn-xl btn-light mr-4 mx-auto">Més informació!</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section class="content-section" id="portfolio">
+        <div class="container">
+            <div class="content-section-heading text-center">
+                <h2 class="mb-0">Ofertes</h2>
+                <hr width="25%" style="border: 1px solid black;">
+            </div>
+            <div class="row no-gutters">
+                <div class="col-lg-6">
+                    <a class="portfolio-item" href="#">
+                        <span class="caption">
+                            <span class="caption-content">
+                                <h2>Nova York</h2>
+                                <p class="lead">7 nits | Esmorzar | Assegurança de viatge</p>
+                                <p class="lead">899 €</p>
+                            </span>
+                        </span>
+                        <img class="img-fluid img-responsive" src="img/nyc2.jpg" alt="">
+                    </a>
+                </div>
+                <div class="col-lg-6">
+                    <a class="portfolio-item" href="#">
+                        <span class="caption">
+                            <span class="caption-content">
+                                <h2>Londres</h2>
+                                <p class="lead">7 nits | Esmorzar | Assegurança de viatge</p>
+                                <p class="lead">449 €</p>
+                            </span>
+                        </span>
+                        <img class="img-fluid img-responsive" src="img/london.jpg" alt="">
+                    </a>
+                </div>
+                <div class="col-lg-6">
+                    <a class="portfolio-item" href="#">
+                        <span class="caption">
+                            <span class="caption-content">
+                                <h2>Sydney</h2>
+                                <p class="lead">7 nits | Esmorzar | Assegurança de viatge</p>
+                                <p class="lead">1995 €</p>
+                            </span>
+                        </span>
+                        <img class="img-fluid img-responsive" src="img/sydney.jpg" alt="">
+                    </a>
+                </div>
+                <div class="col-lg-6">
+                    <a class="portfolio-item" href="#">
+                        <span class="caption">
+                            <span class="caption-content">
+                                <h2>Tokyo</h2>
+                                <p class="lead">7 nits | Esmorzar | Assegurança de viatge</p>
+                                <p class="lead">1750 €</p>
+                            </span>
+                        </span>
+                        <img class="img-fluid img-responsive" src="img/tokio2.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="content-section-heading text-center">
+                <hr width="25%" style="border: 1px solid black;">
+                <a href="#" class="btn btn-xl btn-dark">Més destinacions!</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Callout -->
+    <section class="callout" style="background-image:url('img/bg-callout2.jpg') !important;">
+        <div class="container text-center">
+            <h2 class="mx-auto mb-5">Passa-t’ho bé amb nosaltres</h2>
+        </div>
+    </section>
+
+    <!-- Map -->
+    <section id="contact" class="map">
+        <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.9678701817566!2d2.166113915425391!3d41.37478277926532!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a25c3e20e6ed%3A0x5cb6bf3bb3a98bd6!2sIOC+Institut+Obert+de+Catalunya!5e0!3m2!1ses!2ses!4v1547487315840"></iframe>
+        <br />
+        <small>
+            <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.9678701817566!2d2.166113915425391!3d41.37478277926532!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a25c3e20e6ed%3A0x5cb6bf3bb3a98bd6!2sIOC+Institut+Obert+de+Catalunya!5e0!3m2!1ses!2ses!4v1547487315840"></a>
+        </small>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer text-center">
+        <div class="container">
+            <h4><strong>ViaCity</strong></h4>
+            <p>Av Paral·lel s/n<br>Barcelona, 08080</p>
+            <ul class="list-unstyled">
+                <li><i class="fa fa-phone fa-fw"></i> (93) 253 34 56</li>
+                <li><i class="far fa-envelope"></i><a href="mailto:info@viatges.com">info@viacity.com</a>
+                </li>
+                <li><a href="contacta.html">Contacta amb nosaltres</a></li>
+            </ul>
+            <br>
+            <ul class="list-inline mb-5">
+                <li class="list-inline-item">
+                    <a class="social-link rounded-circle text-white" href="#">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="social-link rounded-circle text-white" href="#">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </li>
+            </ul>
+            <p class="text-muted small mb-0">Copyright &copy; <a href="https://bertofern.wordpress.com/" target="_blank">bertofern.wordpress.com</a> 2019</p>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/stylish-portfolio.min.js"></script>
+
+</body>
+
+</html>
