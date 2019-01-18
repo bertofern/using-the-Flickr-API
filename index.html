@@ -128,83 +128,107 @@
     <script src="js/stylish-portfolio.min.js"></script>
 
     <script>
-
-        var searchTerm = $("#term").val(); // get the user-entered search term
-        var URL = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=7e2e867887109e6943b6aaa27f04ff8f&tags=Girona&per_page=100000&format=json&nojsoncallback=1';
-        //var URL2='http://api.flickr.com/services/rest/?method=flickr.people.getPublicPhotos&user_id=57333193@N00&api_key=f290d9d56bd82fde0c87d7fd6a0e6c33&'; 
+        var key = "184d2ef8b3e0c24f3db00c8eee568c2e"
+        var api_key = "&api_key=" + key;
+        //var searchTerm = $("#term").val(); // get the user-entered search term
+        var searchTerm = "Girona";
         var tags = "&tags=" + searchTerm;
         var tagmode = "&tagmode=any";
-        var jsonFormat = "&format=json";
-        //var ajaxURL = URL2 + "per_page=" + perpage + "&page=" + currentPage + tags + tagmode + jsonFormat;
-        var ajaxURL = URL;
-        //var ajaxURL= URL+"?"+tags+tagmode+jsonFormat;
-
-        $.ajax({
-            url: ajaxURL,
-            dataType: "jsonp",
-            jsonp: "jsoncallback",
-            success: function (data) {
-                // $("#photos").empty(); 
-                if (data.stat != "fail") {
-                    console.log(data);
-                    //$("#photos").empty();
-                    // $("figure").empty();
-                    $.each(data.photos.photo, function (i, photo) {
-                        var photoHTML = "";
-                        //photoHTML += "<div class=\"col-lg-6\">";
-                        photoHTML += "<a target=\"_blank\" href='"; photoHTML += "http://farm" + photo.farm + ".static.flickr.com/" + photo.server + "/" + photo.id + "_" + photo.secret + "_b.jpg'>";
-                        //photoHTML += "<span class=\"caption\">";
-                        //photoHTML += "<span class=\"caption-content\">";
-                        //photoHTML += "</span>";
-                        //photoHTML += "</span>";
-                        photoHTML += "<img class=\"img-rounded\" src='"; 
-                        photoHTML += "http://farm" + photo.farm + ".static.flickr.com/" + photo.server + "/" + photo.id + "_" + photo.secret + "_q.jpg' title='" + photo.title + "' >";
-                        photoHTML += "";
-                        photoHTML += "</a>";
-                        //photoHTML += "</div>";
-                        $("#gallery").append(photoHTML).fadeIn(400);
-                    });
-
-                } else {
-                    $("#gallery").empty();
-                    console.log("Error code " + data.stat);
-                    photoHTML = "Error !! Error !! " + data.stat;
-                }
-            }
-        });
-
         var perpage = 30;
+        //var page = 1;
         var currentPage = 1;
+        //var jsonFormat = "&format=json";
+        var jsonFormat = "&format=json&nojsoncallback=1";
 
-        $('#gallery').infinitescroll({
-            navSelector: "a#next",
-            nextSelector: "a#next",
-            itemSelector: "#gallery a",
-            debug: true,
-            dataType: "json",
-            speed: 'fast',
-            animate: true,
-            loading: {
-                finishedMsg: "All Images Loaded",
-                img: "res/icons/load.gif",
-                msgText: "<em>Adding More Images...</em>"
+        var URL = 'https://api.flickr.com/services/rest/?method=flickr.photos.search';
+        //Para usar directamente los valores de la API se ha de coger la URL que se genera en:
+        //https://www.flickr.com/services/api/explore/flickr.photos.search
+        //Y borrar antes del apartado &api_key=d1ae3facd28313f19d9b7ff6cd7c1242
+        //var URL = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=184d2ef8b3e0c24f3db00c8eee568c2e&tags=Girona&per_page=30&page=1&format=json&nojsoncallback=1';
+
+        //var ajaxURL = URL2 + "per_page=" + perpage + "&page=" + currentPage + tags + tagmode + jsonFormat;
+        var ajaxURL = URL + api_key + "&tags=" + tags + tagmode + "&per_page=" + perpage + "&page=" + currentPage + jsonFormat;
+        //var ajaxURL = URL;
+        //var ajaxURL= URL+"?"+tags+tagmode+jsonFormat;
+        var totalPages = 112244;
+        //var ajaxURL = URL2 + "per_page=" + perpage + "&page=" + currentPage + tags + tagmode + jsonFormat;
+
+        function populate() {
+            $.ajax({
+                url: ajaxURL,
+                dataType: "jsonp",
+                jsonp: "jsoncallback",
+                success: function (data) {
+                    if (data.stat != "fail") {
+                        if (data.photos.photo.length === 0) {
+                            // pause infiniate scroll if empty
+                            $('#flickr').infinitescroll('pause');
+                        }
+                        $.each(data.photos.photo, function (i, photo) {
+                            var photoHTML = "";
+                            //photoHTML += "<div class=\"col-lg-6\">";
+                            photoHTML += "<a target=\"_blank\" href='"; photoHTML += "http://farm" + photo.farm + ".static.flickr.com/" + photo.server + "/" + photo.id + "_" + photo.secret + "_b.jpg'>";
+                            //photoHTML += "<span class=\"caption\">";
+                            //photoHTML += "<span class=\"caption-content\">";
+                            //photoHTML += "</span>";
+                            //photoHTML += "</span>";
+                            photoHTML += "<img class=\"img-rounded\" src='";
+                            photoHTML += "http://farm" + photo.farm + ".static.flickr.com/" + photo.server + "/" + photo.id + "_" + photo.secret + "_q.jpg' title='" + photo.title + "' >";
+                            photoHTML += "";
+                            photoHTML += "</a>";
+                            //photoHTML += "</div>";
+                            $("#flickr").append(photoHTML).fadeIn(400);
+                        });
+
+                    } else {
+                        $("#flickr").empty();
+                        console.log("Error code " + data.stat);
+                        photoHTML = "Error !! Error !! " + data.stat;
+                    }
+                }
+            });
+
+            currentPage = currentPage + 1;
+            ajaxURL = URL + api_key + "&tags=" + tags + tagmode + "&per_page=" + perpage + "&page=" + currentPage + jsonFormat;
+
+        }
+
+        window.addEventListener('scroll', populate);
+
+        //document.getElementById('flickr').addEventListener(
+        //'scroll',
+        //function () {
+        //var scrollTop = document.getElementById('flickr').scrollTop;
+        //var scrollHeight = document.getElementById('flickr').scrollHeight; // added
+        //var offsetHeight = document.getElementById('flickr').offsetHeight;
+        // var clientHeight = document.getElementById('box').clientHeight;
+        //var contentHeight = scrollHeight - offsetHeight; // added
+        //if (contentHeight <= scrollTop) // modified
+        //{
+        // Now this is called when scroll end!
+        //populate;
+        //}
+        //},
+        //false
+        //);
+
+
+        window.addEventListener(
+            'scroll',
+            function () {
+                var scrollTop = document.documentElement.scrollTop ||
+                    document.body.scrollTop;
+                var offerHeight = document.body.offsetHeight;
+                var clientHeight = document.documentElement.clientHeight;
+                if (offsetHeight > scrollTop + clientHeight) {
+                    // Scroll end detected
+                    populate;
+                }
             },
-            prefill: true,
-            behavior: "twitter",
-            errorCallback: function () {
-                // fade out the error message after 2.5 seconds
-                $('#infscr-loading').animate({ opacity: 0.8 }, 2500).fadeOut('normal');
-                $('a#next').addClass('disabled');
-            }
-        }, function (json, opts) {
-            ajaxProcess();
-            currentPage++;
-        });
+            false
+        );
 
-        $("a#next").on("click", function () {
-            ajaxProcess();
-            currentPage++;
-        });
+        populate(); // init document
 
     </script>
 
